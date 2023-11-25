@@ -1,0 +1,87 @@
+/* Styles for backdrop */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for modal content */
+.modal-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 500px;
+  padding: 1rem;
+}
+
+/* Styles for close button */
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: gray;
+}
+
+/* Styles for modal body */
+.modal-body {
+  margin-top: 1rem;
+}
+
+/* Styles for modal header */
+.modal-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Styles for modal description */
+.modal-description {
+  margin-top: 0.5rem;
+  color: gray;
+}
+
+/* Styles for modal footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+/* Styles for cancel button */
+.cancel-button {
+  background-color: transparent;
+  border: 1px solid gray;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: gray;
+  margin-right: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cancel-button:hover {
+  background-color: gray;
+  color: white;
+}
+
+/* Styles for accept button */
+.accept-button {
+  background-color: purple;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.accept-button:hover {
+  background-color: #6a1b9a;
+}

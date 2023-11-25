@@ -1,0 +1,8 @@
+<div class="user-sidebar">
+  <h2>Utilisateurs</h2>
+  <ul>
+    <li *ngFor="let user of users" (click)="selectUser(user)">
+      {{ user.name }}
+    </li>
+  </ul>
+</div>

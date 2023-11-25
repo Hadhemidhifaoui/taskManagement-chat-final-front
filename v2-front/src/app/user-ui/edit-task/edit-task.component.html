@@ -1,0 +1,41 @@
+<br>
+<br>
+
+<div class="task-edit-header">
+  <a routerLink="/ui">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+  Modifier la Tâche
+</div>
+
+<div class="task-edit-form">
+  <div *ngIf="canEditTitle()" class="form-group">
+    <label for="title">Titre de la Tâche</label>
+    <input type="text" id="title" name="title" [(ngModel)]="editedTask.title" class="form-control">
+  </div>
+
+  <div *ngIf="canEditDescription()" class="form-group">
+    <label for="description">Description de la Tâche</label>
+    <textarea id="description" name="description" [(ngModel)]="editedTask.description" class="form-control"></textarea>
+  </div>
+
+  <div *ngIf="canEditDueDate()" class="form-group">
+    <label for="dueDate">Date d'échéance</label>
+    <input type="date" id="dueDate" name="dueDate" [(ngModel)]="editedTask.dueDateTime" class="form-control">
+  </div>
+
+  <div *ngIf="canEditPriority()" class="form-group">
+    <label for="priority">Priorité de la Tâche</label>
+    <select id="priority" name="priority" [(ngModel)]="editedTask.priority" class="form-control">
+      <option value="high">Haute</option>
+      <option value="medium">Moyenne</option>
+      <option value="low">Basse</option>
+    </select>
+  </div>
+
+  <button *ngIf="canEditTitle() || canEditDescription() || canEditDueDate() || canEditPriority()"
+          class="btn btn-primary"
+          (click)="editTask()">
+    Modifier
+  </button>
+</div>

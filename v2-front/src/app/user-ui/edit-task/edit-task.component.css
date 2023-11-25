@@ -1,0 +1,91 @@
+.task-edit-header {
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(137, 81, 172);
+  color: #fff;
+ 
+  font-size: 24px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.task-edit-header a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.task-edit-form {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+button {
+  background-color: rgb(137, 81, 172);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: purple;
+}
+
+/* Optional: Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .task-edit-form {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+<br>
+<br>
+<div class="container px-6 mx-auto grid">
+  <div class="flex items-center justify-between p-4 bg-purple-600 rounded-lg shadow-md">
+    <a routerLink="/topAdmin" class="flex items-center text-sm font-semibold text-purple-100 focus:outline-none focus:shadow-outline-purple">
+      <svg
+        class="w-4 h-4 mr-2"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12.293 4.293a1 1 0 00-1.414-1.414l-7 7a1 1 0 000 1.414l7 7a1 1 0 001.414-1.414L6.414 12H19a1 1 0 100-2H6.414l5.879-5.879z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      Retour
+    </a>
+
+
+    <h1 class="text-2xl font-semibold text-gray-700" style="color: white;">
+      Mettre à jour une Organisation
+    </h1>
+
+    <a class="hidden"></a> <!-- Spacer -->
+  </div>
+<br>
+
+
+  <div
+    class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
+  >
+  <form (ngSubmit)="updateOrganization()">
+
+    <label class="block text-sm">
+      <span class="text-gray-700 dark:text-gray-400">Nom de l'organisation</span>
+      <input
+      [(ngModel)]="organization.name"  name="name"
+        class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 form-input"
+      />
+    </label>
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">Description</span>
+      <textarea [(ngModel)]="organization.description" name="description" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+      rows="3"></textarea>
+    </label>
+
+    <label class="block mt-4 text-sm">
+      <span class="text-gray-700 dark:text-gray-400">Admin de l'organisation</span>
+      <select [(ngModel)]="selectedAdminUserId" name="selectedAdminUserId" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+        <option *ngFor="let admin of adminUsers" [value]="admin.id">{{ admin.name }}</option>
+      </select>
+    </label>
+
+    <br>
+    <br>
+        <div class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300 flex items-center justify-between px-4">
+          <span></span>
+          <div class="ml-4">
+            <button
+              class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+
+              (click)="updateOrganization()"
+              >
+              Modifier organisation
+
+            </button>
+          </div>
+        </div>
+  </form>
+
+
+  </div>
+
+
+
+</div>

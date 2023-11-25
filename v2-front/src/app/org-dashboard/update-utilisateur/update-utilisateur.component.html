@@ -1,0 +1,137 @@
+<br>
+<br>
+<div class="container px-6 mx-auto grid">
+  <div class="flex items-center justify-between p-4 bg-purple-600 rounded-lg shadow-md">
+    <a routerLink="/orgadmin" class="flex items-center text-sm font-semibold text-purple-100 focus:outline-none focus:shadow-outline-purple">
+      <svg
+        class="w-4 h-4 mr-2"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12.293 4.293a1 1 0 00-1.414-1.414l-7 7a1 1 0 000 1.414l7 7a1 1 0 001.414-1.414L6.414 12H19a1 1 0 100-2H6.414l5.879-5.879z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      Retour
+    </a>
+
+
+    <h1 class="text-2xl font-semibold text-gray-700" style="color: white;">
+      Mettre à jour un Utilisateur
+    </h1>
+
+    <a class="hidden"></a> <!-- Spacer -->
+  </div>
+<br>
+
+
+  <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <label class="block text-sm">
+        <span class="text-gray-700 dark:text-gray-400">Nom de l'Utilisateur</span>
+        <input
+          class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+          [(ngModel)]="user.name"
+          name="name"
+          required
+        />
+      </label>
+      <label class="block text-sm">
+        <span class="text-gray-700 dark:text-gray-400">Fonction de l'Utilisateur</span>
+        <input
+          class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+          [(ngModel)]="user.position"
+          name="position"
+          required
+        />
+      </label>
+      <label class="block text-sm">
+        <span class="text-gray-700 dark:text-gray-400">Email de l'Utilisateur</span>
+        <input
+          class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+          [(ngModel)]="user.email"
+          name="email"
+          required
+
+        />
+      </label>
+      <label class="block text-sm">
+        <span class="text-gray-700 dark:text-gray-400">Password</span>
+        <input
+          class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+
+          name="password"
+          type="password"
+          required
+        />
+      </label>
+      <br>
+      <div class="form-group">
+        <label for="permissions" class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300 flex items-center justify-between px-4">Les Permissions pour la des taches </label>
+        <select multiple class="form-control" id="permissions" name="permissions" [(ngModel)]="selectedPermissions">
+          <option *ngFor="let permission of permissions" [value]="permission">{{ permission }}</option>
+        </select>
+      </div>
+      <br>
+      <div class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300 flex items-center justify-between px-4">
+        <span>Permissions pour l'ajout d'une tâche :</span>
+        <div class="ml-4">
+          <label class="inline-flex items-center">
+            <input type="radio" class="form-radio" name="ajouteTask" [(ngModel)]="user.ajouteTask" [value]="true">
+            <span class="ml-2">Permis</span>
+          </label>
+          <label class="inline-flex items-center ml-6">
+            <input type="radio" class="form-radio" name="ajouteTask" [(ngModel)]="user.ajouteTask" [value]="false">
+            <span class="ml-2">Non permis</span>
+          </label>
+        </div>
+      </div>
+      <br>
+      <div class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300 flex items-center justify-between px-4">
+        <span>Permissions pour supprimer les tâches :</span>
+        <div class="ml-4">
+          <label class="inline-flex items-center">
+            <input type="radio" class="form-radio" name="supprimeTask" [(ngModel)]="user.supprimeTask" [value]="true">
+            <span class="ml-2">Permis</span>
+          </label>
+          <label class="inline-flex items-center ml-6">
+            <input type="radio" class="form-radio" name="supprimeTask" [(ngModel)]="user.supprimeTask" [value]="false">
+            <span class="ml-2">Non permis</span>
+          </label>
+        </div>
+      </div>
+
+
+
+
+
+
+      <br>
+      <label for="profileImage">Image de profil</label><br>
+      <div class="custom-file">
+        <input type="file" id="profileImage" name="profileImage" class="custom-file-input" (change)="handleImageInput($event)" required>
+        <label class="custom-file-label" for="profileImage">Choisir une image...</label>
+      </div>
+
+      <img *ngIf="user.profileImage" [src]="user.profileImage| base64ToSafeUrl" class="image-preview">
+
+      <br>
+      <br>
+
+      <div class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300 flex items-center justify-between px-4">
+        <span></span>
+        <div class="ml-4">
+          <button
+            type="submit"
+            class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+          >
+            Mettre à jour Utilisateur
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

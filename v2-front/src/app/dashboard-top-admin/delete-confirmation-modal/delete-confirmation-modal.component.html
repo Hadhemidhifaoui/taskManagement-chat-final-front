@@ -1,0 +1,18 @@
+<div class="modal">
+  <div class="modal-content">
+    <header class="flex justify-end">
+      <button (click)="closeModal()" class="close-button">
+        <span>&times;</span>
+      </button>
+    </header>
+    <div class="modal-body">
+      <h2 class="modal-header">Confirmer la suppression</h2>
+      <p class="modal-description">
+       Voulez-vous vraiment supprimer cet Administrateur ?
+    </div>
+    <footer class="modal-footer">
+      <button (click)="closeModal()" class="cancel-button">Annuler</button>
+      <button (click)="acceptModal()" class="accept-button">Supprimer</button>
+    </footer>
+  </div>
+</div>

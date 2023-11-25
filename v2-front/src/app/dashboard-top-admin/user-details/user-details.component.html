@@ -1,0 +1,59 @@
+<br>
+<br>
+<div class="container mx-auto">
+  <div class="container grid px-6 mx-auto">
+    <div class="flex items-center justify-between p-4 bg-purple-600 rounded-lg shadow-md">
+      <a routerLink="/topAdmin/users" class="flex items-center text-sm font-semibold text-purple-100 focus:outline-none focus:shadow-outline-purple">
+        <svg
+          class="w-4 h-4 mr-2"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12.293 4.293a1 1 0 00-1.414-1.414l-7 7a1 1 0 000 1.414l7 7a1 1 0 001.414-1.414L6.414 12H19a1 1 0 100-2H6.414l5.879-5.879z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        Retour
+      </a>
+
+      <h1 class="text-2xl font-semibold text-gray-700" style="color: white;">
+        Voir tous les détails de cet utilisateur
+      </h1>
+
+      <a class="hidden"></a> <!-- Spacer -->
+    </div>
+<br>
+
+
+
+
+
+
+    <div class="user-details-container">
+      <h2 style="color:mediumorchid">Détails de {{userDetails.name}}</h2>
+      <hr>
+      <hr>
+      <div class="user-detail">
+        <p><strong>Nom:</strong> {{ userDetails.name }}</p>
+        <p><strong>Email:</strong> {{ userDetails.email }}</p>
+        <p><strong>Fonction:</strong> {{ userDetails.position }}</p>
+        <p><strong>Date de création:</strong> {{ userDetails.creationDate | date }}</p>
+        <p><strong>Statut:</strong> <span [ngClass]="userDetails.validated ? 'validated' : 'non-validated'">{{ userDetails.validated ? 'Validé' : 'Non validé' }}</span></p>
+        <strong>Affectez cet Utilisateur à une organisation</strong>
+        <select [formControl]="selectedOrganizationControl" class="form-control">
+          <option value="" disabled selected>Select an organization</option>
+          <option *ngFor="let organization of organizations" [value]="organization.id">{{ organization.name }}</option>
+        </select>
+
+
+      </div>
+      <div class="user-image" *ngIf="userDetails.profileImage">
+        <img class="image-preview" [src]="userDetails.profileImage | base64ToSafeUrl" alt="User Profile Image" />
+      </div>
+
+      <br>
+      <button class="status-button" (click)="updateStatusAndOrganization()">Changer le statut</button>
+    </div>
+

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+/* Import the required animation styles */
+/* Import the required ngx-toastr styles using a relative path */
+@import '../node_modules/ngx-toastr/toastr.css';
+/* Personnalisation des styles des toasts de succès */
+/* Personnalisation des styles des toasts de succès */
+.toast-success {
+  background-color: rgb(236, 10, 236);
+  color: white;
+  border: 1px solid rgb(243, 9, 243);
+  border-radius: 10px; /* Ajoutez cette ligne pour rendre les toasts plus ronds */
+  padding: 8px 16px; /* Ajoutez cette ligne pour ajuster l'espacement interne */
+}
+
+/* Personnalisation des styles des toasts d'erreur */
+.toast-error {
+  background-color: purple;
+  color: white;
+  border: 1px solid purple;
+  border-radius: 10px; /* Ajoutez cette ligne pour rendre les toasts plus ronds */
+  padding: 8px 16px; /* Ajoutez cette ligne pour ajuster l'espacement interne */
+}
+
+
+
+

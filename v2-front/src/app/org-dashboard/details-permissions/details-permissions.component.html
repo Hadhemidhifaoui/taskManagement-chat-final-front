@@ -1,0 +1,28 @@
+<div *ngIf="selectedUser" class="user-permissions">
+  <h2
+  class="user-name" style="color: mediumorchid;">
+  <a routerLink="/orgadmin" class="flex items-center text-purple-600 focus:outline-none focus:shadow-outline-purple">
+    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+      <path
+        fill-rule="evenodd"
+        d="M12.293 4.293a1 1 0 00-1.414-1.414l-7 7a1 1 0 000 1.414l7 7a1 1 0 001.414-1.414L6.414 12H19a1 1 0 100-2H6.414l5.879-5.879z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </a>Détails des permissions pour {{ selectedUser.name }}</h2>
+  <div class="permissions-section">
+    <h3 class="permissions-title">Les permissions pour la modification des tâches :</h3>
+    <ul class="permissions-list">
+      <li *ngFor="let permission of selectedUser.permissions" class="permission">{{ permission }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="selectedUser.ajouteTask || selectedUser.supprimeTask" class="other-permissions-section">
+    <h3 class="permissions-title">Autres permissions spécifiques :</h3>
+    <ul class="permissions-list">
+      <li *ngIf="selectedUser.ajouteTask" class="permission">Permission d'ajout de tâche</li>
+      <li *ngIf="selectedUser.supprimeTask" class="permission">Permission de suppression de tâche</li>
+
+    </ul>
+  </div>
+</div>

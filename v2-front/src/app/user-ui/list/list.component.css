@@ -1,0 +1,27 @@
+
+.text-red-500 {
+  color: #EF4444;
+}
+
+/* Couleur pour le statut "En cours" */
+.text-yellow-500 {
+  color: #F59E0B;
+}
+
+/* Couleur pour le statut "Terminé" */
+.text-green-500 {
+  color: #10B981;
+}
+
+
+.text-gray-500 {
+  color: #6B7280;
+
+
+}
+
+.container.mx-auto.overflow-y-auto {
+  max-height: calc(100vh - 10px); /* Ajustez cette valeur selon vos besoins */
+}
+
+

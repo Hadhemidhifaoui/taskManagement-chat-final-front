@@ -1,0 +1,50 @@
+.user-permissions {
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.user-name {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.permissions-section, .other-permissions-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.permissions-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.permissions-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #333;
+}
+
+.permission {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.other-permissions-section {
+  margin-top: 30px;
+}
+
+.other-permissions-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.other-permissions-section .permission {
+  color: #666;
+}

@@ -1,0 +1,25 @@
+<!-- <div class="chat-container">
+  <div class="chat-header">
+    <button class="back-button" (click)="goBack()">Back</button>
+    <h2>{{ getRecipientName(recipientId) }}</h2>
+  </div>
+  <div class="chat-messages">
+    <div class="message user-message" *ngFor="let message of messages " [ngClass]="{
+      'user-message': message.senderId === senderId,
+      'recipient-message': message.senderId !== senderId
+    }">
+      <div class="message-content">
+
+        <img *ngIf="message.senderPhoto" [src]="message.senderPhoto| base64ToSafeUrl" alt="Sender Profile Photo" class="profile-photo" />
+
+        <div class="content">{{ message.content }}</div>
+      </div>
+      <div class="timestamp">{{ message.sentAt | date:'medium' }}</div>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input [(ngModel)]="newMessage" placeholder="Type your message..." class="message-input" />
+    <button (click)="sendMessage()" class="send-button">Send</button>
+  </div>
+</div> -->

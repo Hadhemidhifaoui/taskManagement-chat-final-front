@@ -1,0 +1,15 @@
+/* Ajoutez ces classes pour personnaliser le style du bouton "View" */
+.view-button {
+  background-color: #8a2be2; /* Couleur violette */
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid #8a2be2;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.view-button:hover {
+  background-color: #9932cc; /* Couleur violette foncée au survol */
+  border-color: #9932cc;
+}
